@@ -1,0 +1,10 @@
+<h2>Welcome to the Movie Database!</h2>
+<div class="form-group">
+  <!--<img src="{{imagePath}}" class="bg-transparent" style="max-height: 100px">-->
+  <p>To access the database login or register first!</p>
+  <ng-template [ngIf]="!authService.isAuthenticated()">
+    <a [routerLink]="['/login']" class="btn btn-link">Login</a>
+  <a [routerLink]="['/register']" class="btn btn-link">Register</a>
+  </ng-template>
+</div>
+

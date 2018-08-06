@@ -1,0 +1,59 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand">Movie Database</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item responsive">
+        <a class="nav-link" routerLink="/">Home</a>
+      </li>
+      <ng-template [ngIf]="authService.isAuthenticated()">
+      <li class="nav-item">
+      <a routerLink="/movies" routerLinkActive class="nav-link">Movies</a>
+      </li>
+      </ng-template>
+      <!--<li class="nav-item dropdown">-->
+      <!--<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+      <!--Dropdown-->
+      <!--</a>-->
+      <!--<div class="dropdown-menu" aria-labelledby="navbarDropdown">-->
+      <!--<a class="dropdown-item" href="#">Action</a>-->
+      <!--<a class="dropdown-item" href="#">Another action</a>-->
+      <!--<div class="dropdown-divider"></div>-->
+      <!--<a class="dropdown-item" href="#">Something else here</a>-->
+      <!--</div>-->
+      <!--</li>-->
+      <!--<li class="nav-item">-->
+      <!--<a class="nav-link disabled" href="#">Disabled</a>-->
+      <!--</li>-->
+    </ul>
+
+    <!--<ul class="dropdown-menu">-->
+    <!--<li><a href="/user/preferences"><i class="icon-cog"></i> Preferences</a></li>-->
+    <!--<li><a href="/help/support"><i class="icon-envelope"></i> Contact Support</a></li>-->
+    <!--<li class="divider"></li>-->
+    <!--<li><a href="/auth/logout"><i class="icon-off"></i> Logout</a></li>-->
+    <!--</ul>-->
+
+    <!--<form class="form-inline my-2 my-lg-0">-->
+      <div>
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item responsive" *ngIf="authService.isAuthenticated()">
+              <a>Welcome, {{username}}!</a>
+            </li>
+        </ul>
+      </div>
+    <!--</form>-->
+  </div>
+</nav>
+
+
+<!--<div class="pull-right">-->
+<!--<ul class="navbar-nav mr-auto pull-right">-->
+<!--<li class="nav-item responsive"><p>Welcome, User</p>-->
+<!--</li>-->
+<!--</ul>-->
+<!--</div>-->

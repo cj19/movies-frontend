@@ -1,0 +1,39 @@
+<h2>Register</h2>
+<ngx-alerts></ngx-alerts>
+<form #f="ngForm" (ngSubmit)="onSubmit()">
+  <div id="user-data" ngModelGroup="userData" #userData="ngModelGroup">
+    <div class="form-group">
+      <label for="firstName">First Name</label>
+      <input id="firstName" type="text"
+             class="form-control" ngModel name="firstName"
+             required minlength="2" #firstName="ngModel">
+      <span class="help-block" style="color:red;" *ngIf="!firstName.valid && firstName.touched">First Name must be at least 2 characters long</span>
+    </div>
+    <div class="form-group">
+      <label for="lastName">Last Name</label>
+      <input id="lastName" type="text" class="form-control" ngModel name="lastName" required minlength="2" #lastName="ngModel">
+      <span class="help-block" style="color:red;" *ngIf="!lastName.valid && lastName.touched">Last Name must be at least 2 characters long</span>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input id="email" type="email" ngModel name="email" class="form-control" required email #email="ngModel">
+      <span *ngIf="!email.valid && email.touched" class="help-block" style="color:red;">Please enter a valid e-mail</span>
+    </div>
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input id="username" type="text" class="form-control" ngModel minlength="5" name="username" required #username="ngModel">
+      <span *ngIf="!username.valid && username.touched" class="help-block" style="color:red;">Username must be at least 5 characters long!</span>
+    </div>
+    <div class="form-group">
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input id="password" type="password" minlength="8" ngModel name="password" required class="form-control" #pswd="ngModel">
+        <span *ngIf="!pswd.valid && pswd.touched" class="help-block" style="color:red;">Please enter valid password(must be at least 8 characters long or more)!</span>
+      </div>
+    </div>
+    <div class="form-group">
+      <button [disabled]="!f.valid" class="btn btn-primary" type="submit">Register</button>
+      <a [routerLink]="['/login']" class="btn btn-link">Cancel</a>
+    </div>
+  </div>
+</form>

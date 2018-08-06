@@ -1,0 +1,7 @@
+.my_text {
+  position: fixed;
+  width: 100px;
+  right: 50%;
+  margin-right: -50px;
+  text-align: right;
+}
